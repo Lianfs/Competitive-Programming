@@ -1,15 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int n, m, a;
-    int quant_n = 0, quant_m = 0;
+    long long n, m, a;
+    long long quant_n, quant_m;
     cin>>n>>m>>a;
-    while(quant_n < n || quant_m < m){
-        if (quant_n < n)
-            quant_n += a;
-        if (quant_m < m)
-            quant_m += a;
-    }
-    cout<<(quant_n/a) * (quant_m/a)<<endl;
+    if (n%a==0)
+        quant_n = n/a;
+    else
+        quant_n = (int) n/a + 1;
+    if (m%a==0)
+        quant_m = m/a;
+    else
+        quant_m = (int) m/a + 1;
+    cout<<quant_n*quant_m<<endl;
     return 0;
 }
